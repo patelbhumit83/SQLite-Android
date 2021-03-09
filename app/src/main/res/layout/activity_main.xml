@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <include layout="@layout/header"/>
+
+    <EditText
+        android:id="@+id/name"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_below="@+id/layout"
+        android:layout_marginTop="80dp"
+        android:text="Name"
+        android:background="@color/cardview_shadow_start_color"
+        android:textAlignment="center"
+        android:gravity="center" />
+
+    <EditText
+        android:id="@+id/contact"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_below="@+id/name"
+        android:layout_marginTop="20dp"
+        android:text="Contact Number"
+        android:background="@color/cardview_shadow_start_color"
+        android:textAlignment="center"
+        android:gravity="center" />
+
+    <EditText
+        android:id="@+id/ssn"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_below="@+id/contact"
+        android:layout_marginTop="20dp"
+        android:text="SSN"
+        android:background="@color/cardview_shadow_start_color"
+        android:textAlignment="center"
+        android:gravity="center" />
+
+    <EditText
+        android:id="@+id/address"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_below="@+id/ssn"
+        android:layout_marginTop="20dp"
+        android:text="Address"
+        android:background="@color/cardview_shadow_start_color"
+        android:textAlignment="center"
+        android:gravity="center" />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:text="Insert User"
+        android:id="@+id/submitbtn"
+        android:layout_below="@+id/address"
+        android:layout_marginTop="20dp"
+        android:textColor="@color/black"
+        android:onClick="AddUser"
+        android:background="@color/cardview_shadow_start_color"
+        />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_marginTop="20dp"
+        android:layout_below="@+id/submitbtn"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/recyclerView"
+        tools:context=".MainActivity">
+
+    </androidx.recyclerview.widget.RecyclerView>
+
+</RelativeLayout>
