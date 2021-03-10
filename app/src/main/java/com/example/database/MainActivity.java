@@ -8,6 +8,7 @@ import android.content.Context;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
@@ -19,8 +20,9 @@ public class MainActivity extends AppCompatActivity {
     static EditText Contact;
     static EditText SSN;
     static EditText Address;
-    DBhandler db = new DBhandler(this);
-    MyAdapter adapter;
+    static Button submit;
+    static DBhandler db;
+    static MyAdapter adapter;
 
 
 
@@ -33,14 +35,16 @@ public class MainActivity extends AppCompatActivity {
         Contact = (EditText) findViewById(R.id.contact);
         SSN = (EditText) findViewById(R.id.ssn);
         Address = (EditText) findViewById(R.id.address);
+        submit = (Button) findViewById(R.id.submitbtn);
+        db = new DBhandler(this);
 
          //Inserting Contacts
-        Log.d("Insert: ", "Inserting ..");
-        Log.d("Counr", "B" + db.getContactsCount());
+//        Log.d("Insert: ", "Inserting ..");
+//        Log.d("Counr", "B" + db.getContactsCount());
         db.addContact(new ContactDB("Ravi", "9100000000", "123456789", "Abcdbhjsc"));
         db.addContact(new ContactDB("Srinivas", "9199999999", "123456780", "asbhscjdbhj"));
-        db.addContact(new ContactDB("Tommy", "9522222222", "123456790","dcbhscs"));
-        db.addContact(new ContactDB("Karthik", "9533333333","1234567890", "efbhwfbabfhbf"));
+//        db.addContact(new ContactDB("Tommy", "9522222222", "123456790","dcbhscs"));
+//        db.addContact(new ContactDB("Karthik", "9533333333","1234567890", "efbhwfbabfhbf"));
 
         // Reading all contacts
         Log.d("Reading: ", "Reading all contacts..");
@@ -116,6 +120,21 @@ public class MainActivity extends AppCompatActivity {
         Contact.setText(editContact.getPhoneNumber());
         SSN.setText(editContact.get_ssn());
         Address.setText(editContact.get_address());
+        submit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                editContact.setName(Name.getText().toString());
+                editContact.setPhoneNumber(Contact.getText().toString());
+                editContact.set_ssn(SSN.getText().toString());
+                editContact.set_address(Address.getText().toString());
+                db.updateContact(editContact);
+                Name.setText("");
+                Contact.setText("");
+                SSN.setText("");
+                Address.setText("");
+                adapter.notifyDataSetChanged();
+            }
+        });
     }
 
 
