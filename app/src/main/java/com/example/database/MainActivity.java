@@ -99,8 +99,12 @@ public class MainActivity extends AppCompatActivity {
                 Toast.makeText(getApplicationContext(), "Data Added successfully", Toast.LENGTH_LONG).show();
                 Name.setText("");
                 Contact.setText("");
-                SSN.setText("");
                 Address.setText("");
+                SSN.setText("");
+                Name.setHint("Name");
+                Contact.setHint("Contact");
+                SSN.setHint("SSN");
+                Address.setHint("Address");
             }
         }
 
@@ -130,8 +134,12 @@ public class MainActivity extends AppCompatActivity {
                 db.updateContact(editContact);
                 Name.setText("");
                 Contact.setText("");
-                SSN.setText("");
                 Address.setText("");
+                SSN.setText("");
+                Name.setHint("Name");
+                Contact.setHint("Contact");
+                SSN.setHint("SSN");
+                Address.setHint("Address");
                 adapter.notifyDataSetChanged();
             }
         });

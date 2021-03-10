@@ -14,7 +14,7 @@
         android:layout_height="40dp"
         android:layout_below="@+id/layout"
         android:layout_marginTop="80dp"
-        android:text="Name"
+        android:hint="Name"
         android:background="@color/cardview_shadow_start_color"
         android:textAlignment="center"
         android:gravity="center" />
@@ -25,7 +25,7 @@
         android:layout_height="40dp"
         android:layout_below="@+id/name"
         android:layout_marginTop="20dp"
-        android:text="Contact Number"
+        android:hint="Contact Number"
         android:background="@color/cardview_shadow_start_color"
         android:textAlignment="center"
         android:gravity="center" />
@@ -36,7 +36,7 @@
         android:layout_height="40dp"
         android:layout_below="@+id/contact"
         android:layout_marginTop="20dp"
-        android:text="SSN"
+        android:hint="SSN"
         android:background="@color/cardview_shadow_start_color"
         android:textAlignment="center"
         android:gravity="center" />
@@ -47,7 +47,7 @@
         android:layout_height="40dp"
         android:layout_below="@+id/ssn"
         android:layout_marginTop="20dp"
-        android:text="Address"
+        android:hint="Address"
         android:background="@color/cardview_shadow_start_color"
         android:textAlignment="center"
         android:gravity="center" />
